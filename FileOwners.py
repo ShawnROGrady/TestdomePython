@@ -1,7 +1,7 @@
 # Created by Shawn O'Grady on 12/7/17.
 # Copyright 2017 Shawn O'Grady. All rights reserved.
 
- #This code is a practice Java interview question from testdome.com
+ #This code is a practice Python interview question from testdome.com
 
  #https://www.testdome.com/questions/python/file-owners/11846
 
