@@ -31,14 +31,22 @@ class LeagueTable:
             rankedPlayers[i]=key
             i=i+1
 
+        #k=1
         for key in self.standings:
-            if self.standings[key]['score']==5:
-                return key
-        return None
+            for j in rankedPlayers:
+                print(rankedPlayers)
+                if(j<len(rankedPlayers)):
+                    if self.standings[rankedPlayers[j+1]]['score']>self.standings[rankedPlayers[j]]['score']:
+                        #swap
+                        tmp=rankedPlayers[j]
+                        rankedPlayers[j]=rankedPlayers[j+1]
+                        rankedPlayers[j+1]=tmp
+
+        return rankedPlayers[rank]
 
 table = LeagueTable(['Mike', 'Chris', 'Arnold'])
-table.record_result('Mike', 2)
+#table.record_result('Mike', 2)
 table.record_result('Mike', 3)
-table.record_result('Arnold', 5)
-table.record_result('Chris', 5)
-print(table.player_rank(1))
+table.record_result('Arnold', 7)
+table.record_result('Chris', 6)
+print(table.player_rank(1)) #test, should show 'Arnold'
