@@ -6,10 +6,18 @@
  #https://www.testdome.com/questions/python/palindrome/7962?visibility=1&skillId=9
 
  # Problem statement: Write a function that checks if a given word is a palindrome. Character case should be ignored.
- class Palindrome:
+
+ #Passes 3/3 tests
+class Palindrome:
 
     @staticmethod
     def is_palindrome(word):
-        return None
+        word=word.lower() #just setting all characters to lower case for simplicity
+        i=len(word)
+        for letter in word:
+            if letter!=word[i-1]:
+                return False
+            i=i-1
+        return True
 
 print(Palindrome.is_palindrome('Deleveled'))
