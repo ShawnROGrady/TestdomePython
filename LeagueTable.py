@@ -23,6 +23,10 @@ class LeagueTable:
         self.standings[player]['score'] += score
 
     def player_rank(self, rank):
+        #should return a player's name
+        for key in self.standings:
+            if self.standings[key]['score']==5:
+                return key
         return None
 
 table = LeagueTable(['Mike', 'Chris', 'Arnold'])
