@@ -41,12 +41,19 @@ class LeagueTable:
                         tmp=rankedPlayers[j]
                         rankedPlayers[j]=rankedPlayers[j+1]
                         rankedPlayers[j+1]=tmp
+                    elif self.standings[rankedPlayers[j+1]]['score']==self.standings[rankedPlayers[j]]['score']:
+                        #case where scores are tied
+                        if self.standings[rankedPlayers[j+1]]['games_played']<self.standings[rankedPlayers[j]]['games_played']:
+                            #swap
+                            tmp=rankedPlayers[j]
+                            rankedPlayers[j]=rankedPlayers[j+1]
+                            rankedPlayers[j+1]=tmp
 
         return rankedPlayers[rank]
 
 table = LeagueTable(['Mike', 'Chris', 'Arnold'])
-#table.record_result('Mike', 2)
+table.record_result('Mike', 3)
 table.record_result('Mike', 3)
 table.record_result('Arnold', 7)
 table.record_result('Chris', 6)
-print(table.player_rank(1)) #test, should show 'Arnold'
+print(table.player_rank(2)) #test, should show 'Chris'
