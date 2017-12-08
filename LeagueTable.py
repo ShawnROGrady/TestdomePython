@@ -11,6 +11,8 @@
         #i) The player with the highest score is ranked first (rank 1). The player with the lowest score is ranked last.
         #ii) If two players are tied on score, then the player who has played the fewest games is ranked higher.
         #iii) If two players are tied on score and number of games played, then the player who was first in the list of players is ranked higher.
+#Passes 3/3 tests
+
 from collections import Counter
 from collections import OrderedDict
 
@@ -31,10 +33,9 @@ class LeagueTable:
             rankedPlayers[i]=key
             i=i+1
 
-        #k=1
         for key in self.standings:
             for j in rankedPlayers:
-                print(rankedPlayers)
+                #print(rankedPlayers)
                 if(j<len(rankedPlayers)):
                     if self.standings[rankedPlayers[j+1]]['score']>self.standings[rankedPlayers[j]]['score']:
                         #swap
@@ -52,8 +53,9 @@ class LeagueTable:
         return rankedPlayers[rank]
 
 table = LeagueTable(['Mike', 'Chris', 'Arnold'])
+table.record_result('Mike', 2)
 table.record_result('Mike', 3)
-table.record_result('Mike', 3)
-table.record_result('Arnold', 7)
-table.record_result('Chris', 6)
-print(table.player_rank(2)) #test, should show 'Chris'
+table.record_result('Arnold', 5)
+table.record_result('Chris', 2)
+table.record_result('Chris', 3)
+print(table.player_rank(1)) #Should show 'Arnold', ranking should be {1: 'Arnold', 2: 'Mike', 3: 'Chris'}
