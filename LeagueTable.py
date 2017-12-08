@@ -52,8 +52,9 @@ class LeagueTable:
         return rankedPlayers[rank]
 
 table = LeagueTable(['Mike', 'Chris', 'Arnold'])
+table.record_result('Mike', 2)
 table.record_result('Mike', 3)
-table.record_result('Mike', 3)
-table.record_result('Arnold', 7)
-table.record_result('Chris', 6)
-print(table.player_rank(2)) #test, should show 'Chris'
+table.record_result('Arnold', 5)
+table.record_result('Chris', 2)
+table.record_result('Chris', 3)
+print(table.player_rank(1)) #Should show 'Arnold', ranking should be {1: 'Arnold', 2: 'Mike', 3: 'Chris'}
