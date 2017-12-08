@@ -23,6 +23,17 @@ class LeagueTable:
         self.standings[player]['score'] += score
 
     def player_rank(self, rank):
+        #should return a player's name
+        rankedPlayers={} #new dictionary w/ keys of player's rank and values of player's name
+        i=1
+        #fill out dictionary, initially sorted by order of player list
+        for key in self.standings:
+            rankedPlayers[i]=key
+            i=i+1
+
+        for key in self.standings:
+            if self.standings[key]['score']==5:
+                return key
         return None
 
 table = LeagueTable(['Mike', 'Chris', 'Arnold'])
