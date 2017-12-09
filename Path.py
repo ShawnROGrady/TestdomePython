@@ -20,8 +20,8 @@ class Path:
 
     def cd(self, new_path):
         pathLength=len(new_path)
-        pathArray=new_path.split('/')
-        print(pathArray)
+        new_pathList=new_path.split('/')
+        print(pathList)
         pass
 
 path = Path('/a/b/c/d')
