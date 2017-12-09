@@ -19,8 +19,11 @@ class Path:
         self.current_path = path
 
     def cd(self, new_path):
+        pathLength=len(new_path)
+        pathArray=new_path.split('/')
+        print(pathArray)
         pass
 
 path = Path('/a/b/c/d')
-path.cd('../x')
+path.cd('/../x')
 print(path.current_path)
